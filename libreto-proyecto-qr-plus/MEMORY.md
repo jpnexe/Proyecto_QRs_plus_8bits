@@ -52,7 +52,14 @@ Al iniciar una nueva sesión de desarrollo asistido por IA, el asistente DEBE:
 
 ---
 
-## 6. HISTORIAL DE VERSIONES Y CAMBIOS (CHANGELOG)
+### [Despliegue GitHub Pages: Configuración y Push Exitoso] - 11/10/2026
+- **Autor:** Asistente IA (Antigravity) & Usuario
+- **Acciones Realizadas:**
+  - Resolución del conflicto de submódulo git huérfano (`Proyecto_QRs_plus_8bits`).
+  - Configuración de `site: 'https://jpnexe.github.io'` y `base: '/Proyecto_QRs_plus_8bits'` en `astro.config.mjs`.
+  - Adaptación de todas las rutas relativas internas y enlaces de páginas (`Layout.astro`, `index.astro`, `presets/index.astro`, `presets/[slug].astro`, `guides/[slug].astro`) al subpath base.
+  - Validación completa: 0 errores en `astro check`, 34/34 tests unitarios en Vitest pasando y compilación de producción en `dist/` exitosa.
+  - Creación del commit y push a la rama `main` en `origin` (`https://github.com/jpnexe/Proyecto_QRs_plus_8bits.git`).
 
 ### [Actualización Avanzada: UI Basada en Referencias] - 11/10/2026
 - **Autor:** Asistente IA (Antigravity)
