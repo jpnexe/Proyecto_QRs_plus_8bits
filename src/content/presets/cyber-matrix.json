@@ -1,0 +1,14 @@
+{
+  "id": "cyber-matrix",
+  "name": "Cyber Matrix Emerald",
+  "description": "Inspirado en pantallas de fósforo verde y terminales arcade retro.",
+  "tag": "Cyberpunk",
+  "colors": {
+    "dots": "#10B981",
+    "background": "#0d1117",
+    "cornersSquare": "#56C596",
+    "cornersDot": "#10B981"
+  },
+  "errorCorrectionLevel": "Q",
+  "featured": true
+}

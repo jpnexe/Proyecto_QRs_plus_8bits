@@ -1,0 +1,14 @@
+{
+  "id": "classic-arcade",
+  "name": "Classic Arcade 8-Bit",
+  "description": "Estilo tradicional de arcade de los 80s con alto contraste en negro y rojo vibrante.",
+  "tag": "Retro",
+  "colors": {
+    "dots": "#E03B24",
+    "background": "#101010",
+    "cornersSquare": "#E03B24",
+    "cornersDot": "#F2C94C"
+  },
+  "errorCorrectionLevel": "H",
+  "featured": true
+}

@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((guide) => ({
+    params: { slug: guide.id },
+    props: { guide },
+  }));
+}
+
+interface Props {
+  guide: CollectionEntry<'guides'>;
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title={`${guide.data.title} | Guías QR`}>
+  <main class="max-w-3xl mx-auto px-4 py-12 space-y-6">
+    <a href={`${base}/`} class="pixel-btn px-3 py-1 bg-zinc-800 text-white text-xs font-mono inline-block">
+      &larr; Volver al Inicio
+    </a>
+
+    <article class="pixel-box p-6 space-y-6">
+      <header class="border-b-4 border-black pb-4">
+        <span class="px-2 py-0.5 bg-[#3B82F6] text-white text-xs font-mono pixel-box-sm">
+          {guide.data.category} &bull; {guide.data.readTimeMinutes} min lectura
+        </span>
+        <h1 class="text-2xl font-bold pixel-font text-[#F2C94C] mt-3">
+          {guide.data.title}
+        </h1>
+        <p class="text-xs text-zinc-400 font-mono mt-1">Publicado: {guide.data.publishedDate}</p>
+      </header>
+
+      <div class="prose prose-invert max-w-none font-mono text-sm leading-relaxed space-y-4">
+        <Content />
+      </div>
+    </article>
+  </main>
+</Layout>

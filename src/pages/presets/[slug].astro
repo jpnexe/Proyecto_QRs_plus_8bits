@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const presets = await getCollection('presets');
+  return presets.map((preset) => ({
+    params: { slug: preset.id },
+    props: { preset },
+  }));
+}
+
+interface Props {
+  preset: CollectionEntry<'presets'>;
+}
+
+const { preset } = Astro.props;
+const { name, description, colors, errorCorrectionLevel, tag } = preset.data;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title={`${name} | Preset QR Retro`}>
+  <main class="max-w-2xl mx-auto px-4 py-12 space-y-6">
+    <a href={`${base}/presets`} class="pixel-btn px-3 py-1 bg-zinc-800 text-white text-xs font-mono inline-block">
+      &larr; Volver al catálogo
+    </a>
+
+    <article class="pixel-box p-6 space-y-6">
+      <header class="border-b-4 border-black pb-4">
+        <span class="px-2 py-0.5 bg-[#E03B24] text-white text-xs font-mono pixel-box-sm">{tag}</span>
+        <h1 class="text-2xl font-bold pixel-font text-[#F2C94C] mt-2">{name}</h1>
+        <p class="text-sm text-zinc-300 font-mono mt-1">{description}</p>
+      </header>
+
+      <section class="space-y-4 font-mono text-sm">
+        <h2 class="text-xs uppercase tracking-widest text-[#3B82F6] font-bold">Paleta de Colores QR</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-3 pixel-box-sm bg-black/40">
+            <span class="text-xs text-zinc-400">Puntos:</span>
+            <p class="font-bold text-base" style={`color: ${colors.dots}`}>{colors.dots}</p>
+          </div>
+          <div class="p-3 pixel-box-sm bg-black/40">
+            <span class="text-xs text-zinc-400">Fondo:</span>
+            <p class="font-bold text-base text-zinc-200">{colors.background}</p>
+          </div>
+        </div>
+
+        <div class="p-3 pixel-box-sm bg-[#10B981]/10 text-emerald-400">
+          <span>Tolerancia de Errores: <strong>Nivel {errorCorrectionLevel}</strong></span>
+        </div>
+      </section>
+    </article>
+  </main>
+</Layout>

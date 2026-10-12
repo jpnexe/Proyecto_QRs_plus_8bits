@@ -1,0 +1,14 @@
+{
+  "id": "retro-gold",
+  "name": "Arcade Gold Quest",
+  "description": "Estilo de monedas y trofeos dorados de 16 bits para un acabado premium vintage.",
+  "tag": "Gold",
+  "colors": {
+    "dots": "#F2C94C",
+    "background": "#1c1917",
+    "cornersSquare": "#F2C94C",
+    "cornersDot": "#E03B24"
+  },
+  "errorCorrectionLevel": "H",
+  "featured": false
+}

@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import QRGeneratorIsland from '../components/QRGeneratorIsland';
+import ThemeToggle from '../components/ThemeToggle';
+import IconGallery from '../components/IconGallery';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const presetsUrl = `${base}/presets`;
+---
+
+<Layout title="Proyecto QR Plus | Creador Retro de Códigos QR">
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+    <header class="flex flex-col md:flex-row justify-between items-center gap-4 border-b-4 border-black pb-4">
+      <div>
+        <div class="inline-block px-2 py-0.5 bg-[#E03B24] text-white pixel-box-sm text-[10px] font-mono uppercase tracking-widest font-bold">
+          Fase 3: Sistema UI & Motor Reactivo
+        </div>
+        <h1 class="text-2xl md:text-4xl font-extrabold tracking-tight pixel-font text-[#F2C94C] mt-2 drop-shadow-md">
+          PROYECTO QR PLUS
+        </h1>
+        <p class="text-xs md:text-sm text-zinc-400 font-mono mt-1">
+          Generador de códigos QR interactivo y personalizable &bull; Estética Arcade 8-Bit
+        </p>
+      </div>
+      <div class="flex items-center gap-2">
+        <ThemeToggle client:load />
+        <a href={presetsUrl} class="pixel-btn px-3 py-1 bg-[#3B82F6] text-white text-xs font-mono">
+          Presets
+        </a>
+      </div>
+    </header>
+
+    <section>
+      <QRGeneratorIsland client:load />
+    </section>
+
+    <section class="space-y-4">
+      <div class="border-t-4 border-black pt-4">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-zinc-400 font-mono mb-2">
+          Tecnologías e Iconos Ratificados
+        </h2>
+        <IconGallery client:visible statusText="Integración Activa" />
+      </div>
+    </section>
+
+    <footer class="text-center text-xs text-zinc-500 font-mono py-4">
+      Proyecto_QR_plus &bull; Astro SSG &bull; Tailwind CSS &bull; React Island Architecture
+    </footer>
+  </main>
+</Layout>
