@@ -9,12 +9,17 @@
     "preview": "astro preview",
     "check": "astro check",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "build:android": "cross-env TARGET=android astro build",
+    "cap:sync": "npm run build:android && cap sync android",
+    "cap:open": "cap open android"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.2.1",
     "@astrojs/sitemap": "^3.7.4",
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
     "@formkit/auto-animate": "^0.8.2",
     "@iconify/react": "^5.2.0",
     "@primer/octicons-react": "^19.15.0",
@@ -31,10 +36,12 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.5.3",
     "@types/node": "^22.13.9",
     "@types/qrcode": "^1.5.5",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "cross-env": "^10.1.0",
     "typescript": "^5.7.3",
     "vitest": "^3.0.7"
   }
