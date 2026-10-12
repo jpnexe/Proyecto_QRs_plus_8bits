@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "Proyecto QR Plus",
+  "short_name": "QR Plus",
+  "description": "Generador y personalizador de códigos QR retro pixel art estilo Arcade 8-Bit.",
+  "id": "/Proyecto_QRs_plus_8bits/",
+  "start_url": "/Proyecto_QRs_plus_8bits/",
+  "scope": "/Proyecto_QRs_plus_8bits/",
+  "display": "standalone",
+  "display_override": ["standalone", "window-controls-overlay", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#101010",
+  "theme_color": "#101010",
+  "lang": "es-ES",
+  "categories": ["utilities", "productivity", "graphics"],
+  "icons": [
+    {
+      "src": "/Proyecto_QRs_plus_8bits/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/Proyecto_QRs_plus_8bits/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/Proyecto_QRs_plus_8bits/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/Proyecto_QRs_plus_8bits/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
